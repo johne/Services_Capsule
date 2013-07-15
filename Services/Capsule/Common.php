@@ -302,7 +302,7 @@ abstract class Services_Capsule_Common
     }
     
     public function getLastId() {
-      $loc = explode('/', $this->getLastLocation);
+      $loc = explode('/', $this->getLastLocation());
       
       if (count($loc) > 2) {
         return $loc[count($loc) - 1];
