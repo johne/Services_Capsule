@@ -101,6 +101,8 @@ abstract class Services_Capsule_Common
      */
     protected $endpoint = 'https://%s.capsulecrm.com/api/%s';
     
+    protected $lastLocation;
+    
     /**
      * Magical Getter
      *
@@ -283,6 +285,7 @@ abstract class Services_Capsule_Common
         
         if (!($return instanceof stdClass)) {
             if ($response->getStatus() == 201 || $response->getStatus() == 200) {
+              $this->lastLocation = $response->getHeader('location');
                 return true;
             }
             
@@ -292,5 +295,9 @@ abstract class Services_Capsule_Common
         }
         
         return $return;
+    }
+    
+    public function getLastLocation() {
+      return $this->lastLocation;
     }
 }
