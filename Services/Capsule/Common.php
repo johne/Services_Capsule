@@ -300,4 +300,13 @@ abstract class Services_Capsule_Common
     public function getLastLocation() {
       return $this->lastLocation;
     }
+    
+    public function getLastId() {
+      $loc = explode('/', $this->getLastLocation);
+      
+      if (count($loc) > 2) {
+        return $loc[count($loc) - 1];
+      }
+      return null;
+    }
 }
