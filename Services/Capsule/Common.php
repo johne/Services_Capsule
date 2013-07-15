@@ -122,6 +122,7 @@ abstract class Services_Capsule_Common
             case 'Party':
             case 'Opportunity':
             case 'Customfield':
+            case 'Customfields':
             case 'Milestone':
 			case 'Cases':
 			case 'Task':
