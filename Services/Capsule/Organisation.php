@@ -55,7 +55,7 @@
  * @link     http://capsulecrm.com/help/page/javelin_api_party
  * @version  Release: @package_version@
  */
-class Services_Capsule_Organization extends Services_Capsule_Common
+class Services_Capsule_Organisation extends Services_Capsule_Common
 {
     /**
      * Add a new Organization 
@@ -76,7 +76,7 @@ class Services_Capsule_Organization extends Services_Capsule_Common
     public function add(array $fields)
     {        
         $url         = '';
-        $org = array('organization' => $fields);
+        $org = array('organisation' => $fields);
 
         $response = $this->sendRequest(
             $url, HTTP_Request2::METHOD_POST, json_encode($org)
@@ -113,7 +113,7 @@ class Services_Capsule_Organization extends Services_Capsule_Common
     public function update($organizationId, array $fields)
     {
         $url          = '/' . (double)$organizationId;
-        $organization = array('organization' => $fields);
+        $organization = array('organisation' => $fields);
 
         $response = $this->sendRequest(
             $url, HTTP_Request2::METHOD_PUT, json_encode($person)
