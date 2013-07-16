@@ -97,11 +97,15 @@ class Services_Capsule_Party_Cases extends Services_Capsule_Common
      *                                     the json-decoded response from the server,
 	 *                                     Or the case ID (double)
      */
-    public function add($partyId, array $fields, $returnid=false)
+    public function add($partyId, array $fields, $returnid=false, $trackid=null)
     {
         
         $url  = '/' . (double)$partyId . '/kase';
         $case = array('kase' => $fields);
+        
+        if ($trackid) {
+          $url += '?trackId='.$trackid;
+        }
 
         $response = $this->sendRequest(
             $url, HTTP_Request2::METHOD_POST, json_encode($case)

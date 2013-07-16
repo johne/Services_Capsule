@@ -310,4 +310,5 @@ abstract class Services_Capsule_Common
       }
       return null;
     }
+
 }
