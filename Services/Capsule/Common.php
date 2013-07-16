@@ -126,6 +126,7 @@ abstract class Services_Capsule_Common
             case 'Milestone':
 			case 'Cases':
 			case 'Task':
+			case 'People':
             
             $currentModule = ucfirst(strtolower($this->moduleName));
 
