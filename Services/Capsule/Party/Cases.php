@@ -104,7 +104,7 @@ class Services_Capsule_Party_Cases extends Services_Capsule_Common
         $case = array('kase' => $fields);
         
         if ($trackid) {
-          $url += '?trackId='.$trackid;
+          $url .= '?trackId='.$trackid;
         }
 
         $response = $this->sendRequest(

@@ -113,7 +113,7 @@ class Services_Capsule_Party_Opportunity extends Services_Capsule_Common
         $opportunity = array('opportunity' => $fields);
         
         if ($trackid) {
-          $url += '?trackId='.$trackid;
+          $url .= '?trackId='.$trackid;
         }
 
         $response = $this->sendRequest(
