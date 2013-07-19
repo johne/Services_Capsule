@@ -105,6 +105,17 @@ class Services_Capsule_Party_History extends Services_Capsule_Common
         return $this->parseResponse($response);
     }
     
+    public function addHistoryItem($partyId, $fields) {
+      $url = '/' . (double)$partyId . '/history';
+
+      $note = array(
+          'historyItem' => $fields,
+      );
+
+      $response = $this->sendRequest($url, HTTP_Request2::METHOD_POST, json_encode($note));
+      return $this->parseResponse($response);
+    }
+    
     /**
      * Add an history note of a party
      *
@@ -132,6 +143,17 @@ class Services_Capsule_Party_History extends Services_Capsule_Common
         
         $response = $this->sendRequest($url, HTTP_Request2::METHOD_PUT, json_encode($note));
         return $this->parseResponse($response);
+    }
+    
+    public function updateHistoryItem($partyId, $historyId, $fields) {
+      $url = '/' . (double)$partyId . '/history/' . (double)$historyId;
+
+      $note = array(
+          'historyItem' => $fields
+      );
+      
+      $response = $this->sendRequest($url, HTTP_Request2::METHOD_PUT, json_encode($note));
+      return $this->parseResponse($response);
     }
     
     /**
