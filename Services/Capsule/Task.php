@@ -117,7 +117,7 @@ class Services_Capsule_Task extends Services_Capsule_Common
 			$request['user'] = $user;
 		}
         
-        $qs = http_build_query($request);
+        $qs = http_build_query($request, '', '&');
         $response = $this->sendRequest('s?' . $qs);
         return $this->parseResponse($response);
     }

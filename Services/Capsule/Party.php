@@ -104,7 +104,7 @@ class Services_Capsule_Party extends Services_Capsule_Common
             $request['limit'] = $limit;
         }
         
-        $request = http_build_query($request);
+        $request = http_build_query($request, '', '&');
         $response = $this->sendRequest('?' . $request);
         return $this->parseResponse($response);
     }
@@ -141,7 +141,7 @@ class Services_Capsule_Party extends Services_Capsule_Common
             $request['limit'] = $limit;
         }
         
-        $request = http_build_query($request);
+        $request = http_build_query($request, '', '&');
         $response = $this->sendRequest('?' . $request);
         return $this->parseResponse($response);
     }
@@ -184,7 +184,7 @@ class Services_Capsule_Party extends Services_Capsule_Common
      */
     public function getAny(array $params)
     {        
-        $request  = http_build_query($params);
+        $request  = http_build_query($params, '', '&');
         $response = $this->sendRequest('?' . $request);
 
         return $this->parseResponse($response);
