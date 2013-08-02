@@ -71,7 +71,7 @@ class Services_Capsule_Tracks extends Services_Capsule_Common
      */
     public function getAll() 
     {        
-        $response = $this->sendRequest();
+        $response = $this->sendRequest('');
         return $this->parseResponse($response);
     }
 }
