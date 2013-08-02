@@ -127,6 +127,7 @@ abstract class Services_Capsule_Common
 			case 'Cases':
 			case 'Task':
 			case 'People':
+			case 'Tracks':
             
             $currentModule = ucfirst(strtolower($this->moduleName));
 
