@@ -101,6 +101,7 @@ class Services_Capsule extends Services_Capsule_Common
             case 'Person':
 			case 'Organisation':
 			case 'Task':
+			case 'Tracks':
 
             if (!isset($this->sections[$section])) {
                 $classname = 'Services_Capsule_' .$section;
